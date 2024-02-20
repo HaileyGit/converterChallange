@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+}
+:root {
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 204, 215);
+  background: linear-gradient(
+    143deg,
+    rgba(255, 204, 215, 1) 0%,
+    rgba(45, 102, 253, 1) 75%
+  );
+}
+
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  padding: 1vh 4vw 1vh 1vw;
+  font-size: 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: white;
+  border-radius: 0.25em;
+  cursor: pointer;
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  /* <option> colors */
+  option {
+    color: inherit;
+    background-color: var(--option-bg);
+  }
+}
+
+input {
+  color: #ffffffde;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.2vw;
+  box-sizing: border-box;
+  width: 38%;
+  padding: 0.5vh 1vw;
+  border: none;
+  border-bottom: 2px solid rgba(253, 253, 253, 0.87);
+  background: none;
+  height: 6vh;
+}
+
+input:disabled {
+  background-color: rgba(255, 231, 231, 0.299);
+}
+
+label {
+  width: 20%;
+  font-family: cursive;
+  color: #ffffffde;
+  font-size: 4vh;
+  font-weight: 400;
+  margin-left: 3%;
+  height: 4vh;
+}
+
+.container {
+  width: 30vw;
+  height: 80vh;
+  background: rgb(255, 76, 45);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 76, 45, 1) 0%,
+    rgba(254, 137, 162, 1) 41%,
+    rgba(255, 181, 190, 1) 100%
+  );
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 100vw;
+  }
+}
+
+.header {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.calwrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  div {
+    height: 35vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btnArea {
+    position: absolute;
+    height: 10vh;
+    flex-direction: row;
+    width: 60vw;
+    align-items: center;
+    justify-content: space-evenly;
+
+    span {
+      background-color: white;
+      border: 0.24rem solid rgba(254, 137, 162, 1);
+      border-radius: 0.6em;
+      text-align: center;
+      width: 4.5vw;
+      height: 6vh;
+      line-height: 6vh;
+      color: rgb(255, 102, 135);
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 8px 12px rgba(0, 0, 0, 0.22);
+    }
+    i {
+      font-size: 2rem;
+    }
+
+    .flipcustom {
+      display: block;
+      width: 4vw;
+      line-height: 5.5vh;
+      i {
+        font-size: 2.4vh;
+      }
+    }
+
+    @media (max-width: 800px) {
+      span {
+        width: 14vw;
+      }
+      .flipcustom {
+        width: 14vw;
+      }
+    }
+  }
+}
+
+.bottomBox {
+  background-color: white;
+  width: 100%;
+  .inputArea {
+    input {
+      border-bottom: 2px solid rgba(254, 137, 162, 0.583);
+      color: rgba(254, 137, 162, 1);
+    }
+    label {
+      color: rgba(254, 137, 162, 1);
+    }
+    input:disabled {
+      background-color: rgba(255, 231, 231, 0.504);
+      /* background-color: linear-gradient(
+          to left,
+          var(--arrow-bg) 3em,
+          var(--select-bg) 3em
+        ); */
+    }
+  }
+}
